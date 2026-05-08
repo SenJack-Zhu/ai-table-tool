@@ -29,7 +29,7 @@
 - `manifest.json` - 添加 `display_name` 字段
 - `package.json` - 添加 `clean` 脚本确保构建前清理旧产物
 
-**状态**: ✅ 已修复，待推送
+**状态**: ✅ 已修复，已推送
 
 ---
 
