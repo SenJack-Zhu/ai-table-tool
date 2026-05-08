@@ -1,6 +1,7 @@
 {
     "id": "ai-table-tool",
     "name": "AI数据库表格处理工具",
+    "display_name": "AI数据库表格处理工具",
     "version": "1.0.0",
     "description": "一个强大的AI驱动的数据库表格处理工具，支持自然语言创建、修改和管理表格",
     "author": "ACU Team",
@@ -20,9 +21,7 @@
     "scripts": [
         "dist/main.js"
     ],
-    "styles": [
-        "dist/style.css"
-    ],
+    "styles": [],
     "translations": {},
     "tags": [
         "database",

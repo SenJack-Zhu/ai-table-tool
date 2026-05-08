@@ -4,7 +4,8 @@
     "description": "AI数据库表格处理工具",
     "main": "src/index.ts",
     "scripts": {
-        "build": "rollup -c rollup.config.js",
+        "clean": "rmdir /s /q dist 2>nul || true",
+        "build": "npm run clean && rollup -c rollup.config.js",
         "dev": "rollup -c rollup.config.js -w"
     },
     "dependencies": {
