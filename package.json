@@ -1,0 +1,19 @@
+{
+    "name": "ai-table-tool",
+    "version": "1.0.0",
+    "description": "AI数据库表格处理工具",
+    "main": "src/index.ts",
+    "scripts": {
+        "build": "rollup -c rollup.config.js",
+        "dev": "rollup -c rollup.config.js -w"
+    },
+    "dependencies": {
+        "tslib": "^2.8.1"
+    },
+    "devDependencies": {
+        "@rollup/plugin-typescript": "^11.1.6",
+        "@types/jquery": "^3.5.29",
+        "rollup": "^4.18.0",
+        "typescript": "^5.4.5"
+    }
+}

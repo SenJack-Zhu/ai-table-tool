@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI数据库表格处理工具 - 演示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 36px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p {
+            color: #888;
+            font-size: 16px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+            color: #fff;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .feature-card p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .demo-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .demo-section h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .table-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        th {
+            background: rgba(102, 126, 234, 0.2);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .preview-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .preview-section img {
+            max-width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .instructions {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px;
+            color: #fff;
+        }
+
+        .instructions h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .instructions ol {
+            padding-left: 20px;
+            color: #aaa;
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI数据库表格处理工具</h1>
+            <p>一款强大的AI驱动的数据库表格处理插件，支持自然语言创建、修改和管理表格</p>
+        </header>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>📝 自然语言交互</h3>
+                <p>用中文描述您的表格操作需求，AI会自动理解并生成对应的表格操作指令。</p>
+            </div>
+            <div class="feature-card">
+                <h3>✨ 智能分析</h3>
+                <p>AI会分析当前表格结构，理解您的需求，并生成最优的操作方案。</p>
+            </div>
+            <div class="feature-card">
+                <h3>🛡️ 安全确认</h3>
+                <p>高风险操作（如删除表、修改结构）需要用户确认，确保数据安全。</p>
+            </div>
+            <div class="feature-card">
+                <h3>📊 实时预览</h3>
+                <p>生成的变更会实时预览，让您清楚了解即将发生的变化。</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔄 多轮对话</h3>
+                <p>支持多轮对话交互，可以逐步完善您的表格设计需求。</p>
+            </div>
+            <div class="feature-card">
+                <h3>💾 历史记录</h3>
+                <p>自动保存操作历史，方便回顾和重新应用之前的操作。</p>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>📋 示例表格</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>姓名</th>
+                            <th>年龄</th>
+                            <th>职业</th>
+                            <th>邮箱</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>张三</td>
+                            <td>28</td>
+                            <td>工程师</td>
+                            <td>zhangsan@example.com</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>李四</td>
+                            <td>32</td>
+                            <td>设计师</td>
+                            <td>lisi@example.com</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>王五</td>
+                            <td>25</td>
+                            <td>产品经理</td>
+                            <td>wangwu@example.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="preview-section">
+            <h2 style="color: #fff; margin-bottom: 20px;">🎯 插件界面预览</h2>
+            <img src="https://neeko-copilot.bytedance.net/api/text_to_image?prompt=Modern%20AI%20assistant%20chat%20interface%20with%20purple%20gradient%20design%2C%20floating%20button%2C%20chat%20panel%2C%20professional%20UI%20design&image_size=landscape_16_9" alt="插件界面预览">
+        </section>
+
+        <section class="instructions">
+            <h2>📖 使用说明</h2>
+            <ol>
+                <li><strong>安装插件</strong>：将插件文件夹放置到Tavern的plugins目录下</li>
+                <li><strong>启用插件</strong>：在Tavern设置中启用"AI数据库表格处理工具"</li>
+                <li><strong>打开工具</strong>：点击右下角的"AI表格工具"按钮</li>
+                <li><strong>输入需求</strong>：在输入框中描述您的表格操作需求</li>
+                <li><strong>发送请求</strong>：点击发送按钮，AI会生成操作方案</li>
+                <li><strong>确认应用</strong>：查看预览后点击"应用到表格"按钮</li>
+            </ol>
+            <div style="margin-top: 20px;">
+                <h3 style="color: #667eea; margin-bottom: 10px;">💡 示例需求</h3>
+                <ul style="color: #aaa; padding-left: 20px;">
+                    <li>新增一张角色表，包含姓名、等级、职业列</li>
+                    <li>删除当前表的年龄列</li>
+                    <li>在用户表中新增邮箱字段</li>
+                    <li>重命名"产品经理"列为"职位"</li>
+                    <li>删除第二行数据</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>AI数据库表格处理工具 v1.0.0 | 基于Tavern插件系统</p>
+        </footer>
+    </div>
+
+    <script src="dist/main.js"></script>
+</body>
+</html>
