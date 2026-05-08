@@ -4,7 +4,7 @@ import type {
     TemplateAssistantGenerateResult,
     TemplateAssistantCompileResult 
 } from '../types';
-import { clone, hashString } from '../utils';
+import { clone, hashString, generateId } from '../utils';
 import { compileTemplateAssistantDraft } from './compiler';
 
 const TEMPLATE_ASSISTANT_SOURCE_DATA_ALLOWED_KEYS = ['note', 'initNode', 'insertNode', 'deleteNode'] as const;
@@ -231,7 +231,7 @@ export async function generateTemplateAssistantDraft(input: TemplateAssistantGen
 
     const compileResult = compileTemplateAssistantDraft({
         tempData,
-        sheetOrder: input.sheetOrder,
+        sheetOrder: input.sheetOrder ?? null,
         currentSheetKey: input.currentSheetKey,
         draft,
     });

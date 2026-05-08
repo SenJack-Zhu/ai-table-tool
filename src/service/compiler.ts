@@ -420,11 +420,17 @@ function compilePatchSheetLocks(context: CompileContext, operation: TemplateAssi
     
     const changes: string[] = [];
     const patch = operation.patch;
-    const lockChange = {
+    const lockChange: {
+        sheetKey: string;
+        rows: Array<{ rowIndex: number; locked: boolean }>;
+        columns: Array<{ colIndex: number; locked: boolean }>;
+        cells: Array<{ rowIndex: number; colIndex: number; locked: boolean }>;
+        specialIndexLocked?: boolean;
+    } = {
         sheetKey: operation.sheetKey,
-        rows: [] as Array<{ rowIndex: number; locked: boolean }>,
-        columns: [] as Array<{ colIndex: number; locked: boolean }>,
-        cells: [] as Array<{ rowIndex: number; colIndex: number; locked: boolean }>,
+        rows: [],
+        columns: [],
+        cells: [],
     };
     
     if (patch.rows && Array.isArray(patch.rows)) {

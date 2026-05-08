@@ -256,6 +256,7 @@ export interface ChatTurn {
     type: ChatTurnType;
     content: string;
     timestamp: number;
+    summary?: string;
     draft?: TemplateAssistantDraft;
     compileResult?: TemplateAssistantCompileResult;
     aiRawText?: string;
